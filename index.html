@@ -41,6 +41,16 @@ body.is-stage{background:#0d0f11}#stagePage{background:#0d0f11}#stagePage::befor
 @media(max-width:560px){.shell{width:calc(100% - 20px);margin:10px auto;padding:20px 16px 28px;border-radius:28px}.nav{margin-bottom:18px}.nav-right{gap:8px}.langpill,.status-pill{font-size:11px;padding:8px 11px}.activity-header{gap:15px;min-height:110px;margin:4px 0 12px}.activity-header .voice-orb{width:74px;height:74px}.activity-copy h1{font-size:29px;margin:9px 0 6px}.activity-copy .eyebrow{font-size:8px;letter-spacing:.13em}.activity-caption{font-size:11px}.intro{font-size:13px}.language-controls{gap:8px}.language-controls .btn{width:42px;height:48px}.field select{font-size:14px;padding:12px 9px}.field label{font-size:11px}.panel{padding:18px}.panel-title{gap:8px}.panel-title h2{font-size:13px}.soft-badge{font-size:10px;max-width:45%;flex-shrink:0}.stage-signal{bottom:6%;right:5%}.stage-signal .voice-orb{width:32px;height:32px}#stageActivityText{display:none}.is-stage .stage-footer{letter-spacing:.13em}.stage-preview{border-radius:22px}.brand{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.voice-orb,.voice-orb *{animation:none!important}.voice-orb::after{filter:none}.orb-lens{backdrop-filter:none;-webkit-backdrop-filter:none}}
 
+
+.caption-word{display:inline-block;max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere;vertical-align:baseline}
+.stage-toolbar{z-index:5;opacity:.75;gap:6px}.stage-toolbar:hover,.stage-toolbar:focus-within{opacity:1}.stage-toolbar button{padding:10px 12px;font-size:11px;white-space:nowrap}
+.stage-notes{position:absolute;right:3vw;top:21vh;bottom:16vh;width:clamp(250px,25vw,360px);display:flex;flex-direction:column;gap:12px;overflow:auto;overscroll-behavior:contain;padding:4px;z-index:3;text-align:start;scrollbar-width:thin}.stage-notes[hidden]{display:none}
+#stagePage.has-notes{padding-right:calc(clamp(250px,25vw,360px) + 8vw)}
+.stage-note{border:1px solid #ffffff20;border-radius:20px;background:linear-gradient(145deg,#ffffff08,#ffffff03);box-shadow:inset 0 1px #ffffff0c;padding:18px 20px;flex-shrink:0;overflow-wrap:anywhere}.note-eyebrow{font-size:9px;letter-spacing:.18em;color:#8592a4}.stage-note h3{font-size:clamp(17px,1.7vw,24px);font-weight:570;line-height:1.3;margin:9px 0;color:#eff2f7}.stage-note p{font-size:clamp(14px,1.3vw,18px);line-height:1.55;color:#bac2ce;margin:0;white-space:pre-wrap}
+#stageTools{width:min(620px,calc(100vw - 28px));max-height:80dvh;overflow:auto;overscroll-behavior:contain;border:1px solid #ffffff30;border-radius:26px;background:linear-gradient(145deg,#25292cf5,#121518fa);color:#eef1f6;box-shadow:0 30px 120px #0009,inset 0 1px #ffffff16;padding:24px;text-align:left}
+#stageTools::backdrop{background:#05070c88;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}.tool-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}.tool-heading h2{font-size:20px;font-weight:570;letter-spacing:-.03em;margin:0}.tool-heading button{padding:8px 12px}.notes-manager{display:flex;flex-direction:column;gap:10px;margin-top:20px;border-top:1px solid #ffffff15;padding-top:14px}.note-manager-row{display:flex;gap:8px;align-items:center}.note-manager-row>div{flex:1;min-width:0;overflow-wrap:anywhere;font-size:13px;color:#bbc4d0}.note-manager-row button{flex-shrink:0;padding:8px 10px}.test-controls button[hidden]{display:none}
+@media(max-width:700px){.stage-toolbar{top:max(12px,env(safe-area-inset-top));left:12px;right:12px;max-width:none;justify-content:center;opacity:1;gap:5px}.stage-toolbar button{font-size:10px;padding:9px 10px}.is-stage .stage-language{top:clamp(93px,13vh,120px);left:7%;right:7%;font-size:12px;text-align:center}#stagePage{padding:23vh 6vw 14vh}#stagePage.has-notes{padding:23vh 6vw 46vh}.stage-notes{left:6vw;right:6vw;top:auto;bottom:13vh;width:auto;max-height:29vh;gap:8px;padding:2px}.stage-note{border-radius:16px;padding:12px 15px}.stage-note h3{font-size:16px;margin:6px 0}.stage-note p{font-size:13px;line-height:1.45}#stageTools{padding:19px;border-radius:24px;max-height:76dvh}.tool-heading{margin-bottom:16px}.stage-signal{bottom:5%}.is-stage #stagePage.scene-position-bottom{padding-bottom:18vh}.is-stage #stagePage.has-notes.scene-position-bottom{padding-bottom:46vh}}
+
 </style>
 </head>
 <body>
@@ -66,7 +76,7 @@ body.is-stage{background:#0d0f11}#stagePage{background:#0d0f11}#stagePage::befor
   <section class="panel"><div class="panel-title"><h2 id="sourceHeading">Rozpoznana wypowiedź</h2><span class="soft-badge" id="recognitionBadge">Oczekiwanie</span></div><div class="speech placeholder" id="sourceText">Tutaj pojawią się słowa w wybranym języku źródłowym…</div><div class="panel-bottom"><span class="meta" id="recognitionStatus">Źródło: mikrofon komputera</span><button class="btn btn-small btn-subtle" id="clearSourceBtn">Wyczyść tekst</button></div></section>
   <section class="panel"><div class="panel-title"><h2 id="targetHeading">Tłumaczenie</h2><span class="soft-badge" id="translationBadge">Silnik: automatyczny</span></div><div class="polish placeholder" id="translatedText">Tutaj pojawi się tłumaczenie wyświetlane na scenie…</div><div class="panel-bottom"><span class="meta" id="translationStatus">Gotowe do testu</span><button class="btn btn-small btn-subtle" id="clearStageBtn">Wyczyść ekran</button></div></section>
  </div>
- <div class="section-heading"><h2>Podgląd ekranu scenicznego</h2><p>To właśnie zobaczy publiczność na projektorze lub ekranie LED</p></div>
+ <div class="section-heading"><h2>Podgląd ekranu scenicznego</h2><p>Podgląd napisów • języki i notatki zmienisz także na dużym ekranie</p></div>
  <div class="stage-preview scene-position-center" id="previewBox"><div class="stage-language" id="previewLabel">FRANÇAIS → POLSKI</div><div class="stage-text stage-placeholder" id="previewText">Tłumaczenie pojawi się tutaj</div><div class="stage-footer">TŁUMACZENIE NA ŻYWO</div><div class="preview-signal"><span class="voice-orb" aria-hidden="true"><span class="orb-core"></span><span class="orb-lens lens-one"></span><span class="orb-lens lens-two"></span></span></div></div>
  <div class="lower-grid">
   <section class="panel" style="margin-top:18px"><div class="panel-title"><h2>Ustawienia</h2><span class="soft-badge">Zapisane w przeglądarce</span></div>
@@ -93,7 +103,28 @@ body.is-stage{background:#0d0f11}#stagePage{background:#0d0f11}#stagePage::befor
 <div id="stagePage" class="scene-position-center" role="region" aria-label="Napisy na scenie">
  <div class="stage-language">FRANÇAIS → POLSKI</div><div class="stage-text stage-placeholder" id="stageText"> </div><div class="stage-footer">TŁUMACZENIE NA ŻYWO</div><div class="stage-bottom-line"></div>
  <div class="stage-signal"><span class="voice-orb" aria-hidden="true"><span class="orb-core"></span><span class="orb-lens lens-one"></span><span class="orb-lens lens-two"></span></span><span id="stageActivityText">Gotowy na Twój głos.</span></div>
- <div class="stage-status" id="stageStatus" role="status"></div><div class="stage-toolbar"><button id="stageMicBtn" hidden>■ Stop mikrofonu</button><button id="fullscreenBtn">⛶ Pełny ekran</button><button id="stageCloseBtn">Panel / zamknij</button></div>
+ <aside id="stageNotes" class="stage-notes" aria-label="Wyjaśnienia pojęć" hidden></aside><div class="stage-status" id="stageStatus" role="status"></div><div class="stage-toolbar"><button id="stageLanguageBtn" aria-haspopup="dialog">Języki ⇄</button><button id="stageNoteBtn" aria-haspopup="dialog">＋ Notatka</button><button id="stageMicBtn" hidden>■ Stop mikrofonu</button><button id="fullscreenBtn">⛶ Pełny ekran</button><button id="stageCloseBtn">Panel / zamknij</button></div>
+ <dialog id="stageTools" aria-labelledby="stageToolTitle">
+  <div class="tool-heading"><h2 id="stageToolTitle">Języki</h2><button type="button" id="stageToolClose" class="btn btn-small" aria-label="Zamknij ustawienia">✕</button></div>
+  <section id="stageLanguagePanel">
+   <div class="language-controls">
+    <div class="field"><label for="stageSourceLanguage">Z jakiego języka?</label><select id="stageSourceLanguage"></select></div>
+    <button type="button" id="stageSwapLanguagesBtn" class="btn" aria-label="Zamień języki na scenie">⇄</button>
+    <div class="field"><label for="stageTargetLanguage">Na jaki język?</label><select id="stageTargetLanguage"></select></div>
+   </div>
+   <p class="mini">Zmiana działa od razu. Aktywny mikrofon zostanie wznowiony w wybranym języku.</p>
+  </section>
+  <section id="stageNotePanel" hidden>
+   <p class="mini">Wyjaśnij słowo lub pojęcie. Notatki pojawią się obok napisów i nie przerywają tłumaczenia. Jednocześnie możesz pokazać do 3 notatek.</p>
+   <form id="stageNoteForm">
+    <div class="field"><label for="noteTitle">Słowo lub pojęcie (opcjonalnie)</label><input id="noteTitle" maxlength="60" placeholder="np. Machine learning" autocomplete="off"></div>
+    <div class="field" style="margin-top:12px"><label for="noteBody">Twoje wyjaśnienie</label><textarea id="noteBody" required maxlength="400" placeholder="Wpisz krótkie wyjaśnienie dla publiczności…"></textarea></div>
+    <p id="noteFeedback" class="mini" role="status"></p>
+    <div class="test-controls"><button type="submit" id="noteSaveBtn" class="btn btn-small btn-primary">Pokaż notatkę</button><button type="button" id="noteCancelEditBtn" class="btn btn-small" hidden>Anuluj edycję</button><button type="button" id="clearNotesBtn" class="btn btn-small btn-subtle">Ukryj wszystkie</button></div>
+   </form>
+   <div id="stageNotesList" class="notes-manager" aria-label="Notatki na ekranie"></div>
+  </section>
+ </dialog>
 </div>
 <script>
 (() => {
@@ -101,6 +132,7 @@ body.is-stage{background:#0d0f11}#stagePage{background:#0d0f11}#stagePage::befor
  const $ = id => document.getElementById(id);
  const STAGE_KEY = 'scena-live-frpl-stage-v2';
  const SETTINGS_KEY = 'scena-live-frpl-settings-v2';
+ const NOTES_KEY='scena-live-notes-v1';
  const isStage = new URL(location.href).searchParams.get('view') === 'stage';
  const languages={
   fr:{name:'francuski',native:'FRANÇAIS',speech:'fr-FR',flag:'🇫🇷'},
@@ -138,6 +170,8 @@ body.is-stage{background:#0d0f11}#stagePage{background:#0d0f11}#stagePage::befor
  let settings = {...defaults};
  try { settings = {...defaults,...JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}')}; } catch(_) {}
  if(!languages[settings.source])settings.source=defaults.source;if(!languages[settings.target])settings.target=defaults.target;
+ let notesData=[],editingNoteId=null;
+ try{notesData=normalizeNotes(JSON.parse(localStorage.getItem(NOTES_KEY)||'[]'));}catch(_){}
  let stageData = {segments:[],visible:true};
  try { stageData = {...stageData,...JSON.parse(localStorage.getItem(STAGE_KEY)||'{}')}; } catch(_) {}
  let channel = null;
@@ -186,11 +220,70 @@ body.is-stage{background:#0d0f11}#stagePage{background:#0d0f11}#stagePage::befor
   $('activityText').textContent=labels[state];$('stageActivityText').textContent=labels[state];
   if(broadcast)emit({type:'activity',state});
  }
+ function captionParts(text,locale){
+  if(typeof Intl.Segmenter!=='function')return text.match(/\s+|\S+/gu)||[];
+  const parts=[];
+  for(const {segment,isWordLike} of new Intl.Segmenter(locale,{granularity:'word'}).segment(text)){
+   if(!isWordLike&&!/^\s+$/u.test(segment)&&parts.length&&!/^\s+$/u.test(parts.at(-1)))parts[parts.length-1]+=segment;
+   else parts.push(segment);
+  }
+  return parts;
+ }
  function updateCaption(el,text){
-  if(el.textContent===text)return;el.textContent=text;
-  el.getAnimations().forEach(animation=>animation.cancel());
-  if(!text.trim()||matchMedia('(prefers-reduced-motion: reduce)').matches||!el.animate)return;
-  el.animate([{opacity:.4,filter:'blur(4px)',transform:'translate3d(0,9px,0)'},{opacity:1,filter:'blur(0px)',transform:'translate3d(0,0,0)'}],{duration:stageData.draft?260:430,easing:'cubic-bezier(.16,1,.3,1)'});
+  if(el.textContent===text)return;
+  const parts=captionParts(text,el.lang||settings.target),old=el._captionParts||[];
+  let shared=0;if(el.childNodes.length===old.length)while(shared<parts.length&&shared<old.length&&parts[shared]===old[shared])shared++;
+  while(el.childNodes.length>shared){const node=el.lastChild;if(node.nodeType===1)node.getAnimations().forEach(a=>a.cancel());node.remove();}
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;let word=0;
+  for(let i=shared;i<parts.length;i++){
+   if(/^\s+$/u.test(parts[i])){el.append(document.createTextNode(parts[i]));continue;}
+   const span=document.createElement('span');span.className='caption-word';span.textContent=parts[i];el.append(span);
+   if(!reduced&&span.animate)span.animate([{opacity:.35,filter:'blur(3px)',transform:'translate3d(0,8px,0)'},{opacity:1,filter:'blur(0px)',transform:'translate3d(0,0,0)'}],{duration:stageData.draft?260:420,delay:Math.min(word*28,stageData.draft?100:180),easing:'cubic-bezier(.16,1,.3,1)',fill:'backwards'});
+   word++;
+  }
+  el._captionParts=parts;
+ }
+ function normalizeNotes(value){
+  if(!Array.isArray(value))return [];
+  return value.filter(n=>n&&typeof n.id==='string'&&typeof n.text==='string'&&n.text.trim()).slice(0,3).map(n=>({id:n.id,title:typeof n.title==='string'?n.title.slice(0,60):'',text:n.text.slice(0,400),lang:languages[n.lang]?n.lang:'pl'}));
+ }
+ function saveNotes(){try{localStorage.setItem(NOTES_KEY,JSON.stringify(notesData));}catch(_){}emit({type:'notes',notes:notesData});renderNotes();}
+ function resetNoteEditor(){editingNoteId=null;$('stageNoteForm').reset();$('noteSaveBtn').textContent='Pokaż notatkę';$('noteCancelEditBtn').hidden=true;$('noteFeedback').textContent='';}
+ function removeNote(id){notesData=notesData.filter(n=>n.id!==id);if(editingNoteId===id)resetNoteEditor();saveNotes();}
+ function renderNotes(){
+  const rail=$('stageNotes'),list=$('stageNotesList');rail.replaceChildren();list.replaceChildren();
+  rail.hidden=!notesData.length;$('stagePage').classList.toggle('has-notes',!!notesData.length);
+  $('stageNoteBtn').textContent=notesData.length?'Notatki · '+notesData.length:'＋ Notatka';
+  for(const note of notesData){
+   const card=document.createElement('article');card.className='stage-note';card.lang=note.lang;card.dir='auto';
+   const label=document.createElement('span');label.className='note-eyebrow';label.textContent='WYJAŚNIENIE';label.lang='pl';
+   const title=document.createElement('h3');title.textContent=note.title||'Notatka';
+   const body=document.createElement('p');body.textContent=note.text;card.append(label,title,body);rail.append(card);
+   const row=document.createElement('div');row.className='note-manager-row';
+   const description=document.createElement('div');description.textContent=note.title||note.text.slice(0,60);
+   const edit=document.createElement('button');edit.type='button';edit.className='btn btn-small';edit.textContent='Edytuj';edit.onclick=()=>{editingNoteId=note.id;$('noteTitle').value=note.title;$('noteBody').value=note.text;$('noteSaveBtn').textContent='Zapisz zmiany';$('noteCancelEditBtn').hidden=false;$('noteFeedback').textContent='Edytujesz notatkę widoczną na ekranie.';$('noteBody').focus();};
+   const remove=document.createElement('button');remove.type='button';remove.className='btn btn-small';remove.textContent='Ukryj';remove.setAttribute('aria-label','Ukryj notatkę '+(note.title||'bez tytułu'));remove.onclick=()=>removeNote(note.id);
+   row.append(description,edit,remove);list.append(row);
+  }
+  if(!notesData.length){const empty=document.createElement('p');empty.className='mini';empty.textContent='Brak notatek na ekranie.';list.append(empty);}
+  renderStage();
+ }
+ function openStageTools(mode){
+  const languagesMode=mode==='languages';$('stageLanguagePanel').hidden=!languagesMode;$('stageNotePanel').hidden=languagesMode;
+  $('stageToolTitle').textContent=languagesMode?'Języki tłumaczenia':'Notatki na ekranie';renderLanguages();
+  const dialog=$('stageTools');if(!dialog.open)dialog.showModal();
+ }
+ function initStageTools(){
+  $('stageLanguageBtn').onclick=()=>openStageTools('languages');$('stageNoteBtn').onclick=()=>openStageTools('notes');$('stageToolClose').onclick=()=>$('stageTools').close();
+  $('stageSourceLanguage').onchange=e=>changeLanguages(e.target.value,settings.target);$('stageTargetLanguage').onchange=e=>changeLanguages(settings.source,e.target.value);$('stageSwapLanguagesBtn').onclick=()=>changeLanguages(settings.target,settings.source);
+  $('noteCancelEditBtn').onclick=resetNoteEditor;$('clearNotesBtn').onclick=()=>{notesData=[];resetNoteEditor();saveNotes();};
+  $('stageNoteForm').onsubmit=e=>{e.preventDefault();const text=$('noteBody').value.trim();if(!text)return;
+   if(!editingNoteId&&notesData.length>=3){$('noteFeedback').textContent='Na ekranie są już 3 notatki. Ukryj jedną, aby dodać kolejną.';return;}
+   const note={id:editingNoteId||(globalThis.crypto?.randomUUID?.()||Date.now()+'-'+Math.random()),title:$('noteTitle').value.trim().slice(0,60),text:text.slice(0,400),lang:settings.target};
+   if(editingNoteId)notesData=notesData.map(n=>n.id===editingNoteId?note:n);else notesData.unshift(note);
+   resetNoteEditor();saveNotes();$('stageTools').close();
+  };
+  renderNotes();
  }
  function renderStage(){
   renderLanguages();const text=stageTextValue();
@@ -202,7 +295,7 @@ body.is-stage{background:#0d0f11}#stagePage{background:#0d0f11}#stagePage::befor
   const page=$('stagePage'),out=$('stageText'),style=getComputedStyle(page);
   const available=page.clientHeight-parseFloat(style.paddingTop)-parseFloat(style.paddingBottom);
   let size=parseFloat(getComputedStyle(out).fontSize);
-  while(size>22&&(out.scrollHeight>available||out.scrollWidth>page.clientWidth-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight))){size-=2;page.style.setProperty('--stage-font',size+'px');}
+  while(size>(notesData.length&&innerWidth<=700?18:22)&&(out.scrollHeight>available||out.scrollWidth>page.clientWidth-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight))){size-=2;page.style.setProperty('--stage-font',size+'px');}
  }
  function stageStatus(text,error=false){$('stageStatus').textContent=text;$('stageStatus').classList.toggle('error',error);}
  function showMessage(message,isError=false){if(isError)setActivity('error');stageStatus(message,isError);if(isStage)return;const el=$('notice');el.textContent=message;el.classList.add('visible');el.classList.toggle('error',isError);}
@@ -245,7 +338,7 @@ body.is-stage{background:#0d0f11}#stagePage{background:#0d0f11}#stagePage::befor
  }
  function renderLanguages(){
   const from=language(settings.source),to=language(settings.target);
-  $('sourceLanguage').value=settings.source;$('targetLanguage').value=settings.target;
+  $('sourceLanguage').value=settings.source;$('targetLanguage').value=settings.target;$('stageSourceLanguage').value=settings.source;$('stageTargetLanguage').value=settings.target;
   document.querySelector('.langpill').textContent=pairLabel();
   document.querySelectorAll('.stage-footer').forEach(el=>el.textContent=settings.source===settings.target?'NAPISY NA ŻYWO':'TŁUMACZENIE NA ŻYWO');
   document.querySelectorAll('.stage-language').forEach(el=>{el.textContent=pairLabel();el.dir='auto';});
@@ -407,14 +500,14 @@ body.is-stage{background:#0d0f11}#stagePage{background:#0d0f11}#stagePage::befor
   checkLocalSupport();
   renderStage();renderHistory();
  }
- function initStage(){document.body.classList.add('is-stage');renderStage();}
+ function initStage(){document.body.classList.add('is-stage');$('stageMicBtn').hidden=false;$('stageMicBtn').textContent='◉ Mikrofon tutaj';renderStage();}
 
- if(channel){channel.onmessage=e=>{const msg=e.data;if(msg?.type==='activity')setActivity(msg.state,false);if(msg?.type==='stage'){stageData=msg.data;renderStage();}if(msg?.type==='settings'){receiveSettings(msg.settings);}};}
- window.addEventListener('storage',e=>{if(e.key===STAGE_KEY){try{stageData=JSON.parse(e.newValue);renderStage();}catch(_){}}if(e.key===SETTINGS_KEY){try{receiveSettings(JSON.parse(e.newValue));}catch(_){}}});
- for(const id of ['sourceLanguage','targetLanguage'])for(const [code,entry] of Object.entries(languages)){
+ if(channel){channel.onmessage=e=>{const msg=e.data;if(msg?.type==='notes'){notesData=normalizeNotes(msg.notes);renderNotes();}if(msg?.type==='activity')setActivity(msg.state,false);if(msg?.type==='stage'){stageData=msg.data;renderStage();}if(msg?.type==='settings'){receiveSettings(msg.settings);}};}
+ window.addEventListener('storage',e=>{if(e.key===NOTES_KEY){try{notesData=normalizeNotes(JSON.parse(e.newValue));renderNotes();}catch(_){}}if(e.key===STAGE_KEY){try{stageData=JSON.parse(e.newValue);renderStage();}catch(_){}}if(e.key===SETTINGS_KEY){try{receiveSettings(JSON.parse(e.newValue));}catch(_){}}});
+ for(const id of ['sourceLanguage','targetLanguage','stageSourceLanguage','stageTargetLanguage'])for(const [code,entry] of Object.entries(languages)){
   const option=document.createElement('option');option.value=code;option.textContent=entry.flag+' '+entry.name;$(id).append(option);
  }
- setActivity('idle',false);initStageControls();if(isStage)initStage();else initOperator();
+ setActivity('idle',false);initStageControls();initStageTools();if(isStage)initStage();else initOperator();
 })();
 </script>
 </body>

@@ -38,3 +38,9 @@ Test languages.cjs: wybrany język mikrofonu, żądania PL → EN, zamiana kieru
 Dodano grafitowe tło z delikatnym rastrem, chłodne szklane panele i świetlistą kulę CSS. Ruch kuli odpowiada stanowi aplikacji (gotowość, nasłuchiwanie, tłumaczenie, błąd), nie jest pomiarem głośności mikrofonu. Nowy tekst wyłania się z lekkiego rozmycia i przesunięcia przez 260–430 ms; treść jest dostępna od razu. Ponowne renderowanie identycznego napisu nie uruchamia animacji. Preferencja ograniczonego ruchu wyłącza animację kuli i napisów. Zachowano textContent, obsługę RTL i synchronizację.
 
 Powtórzono testy browser.cjs, storage.cjs, live-captions.cjs i languages.cjs: PASS. Obejrzano zrzuty panelu na telefonie i ekranu scenicznego. Sprawdzono w przeglądarce brak animacji po włączeniu prefers-reduced-motion: reduce.
+
+## Narzędzia sceny, notatki i animacja słów
+
+Test stage-tools.cjs: zmiana języków wewnątrz natywnego pełnego ekranu i restart mikrofonu, notatki dodawane/edytowane/ukrywane (limit 3), ciągłość napisów podczas pisania, bezpieczne traktowanie HTML jako tekstu, synchronizacja i trwałość notatek, localStorage bez BroadcastChannel, zachowanie niezmienionych słów podczas animacji, ograniczony ruch oraz rozdzielenie notatek i napisów na telefonie. Wynik: PASS. Rozpoznawanie i tłumaczenie w teście są symulowane.
+
+Animacja używa Intl.Segmenter z obsługą zapasową. Zachowuje istniejący początek tekstu i animuje nowe/poprawione słowa; nie opóźnia otrzymania ani kopiowania całej treści. Notatki mają własny zapis localStorage i komunikaty synchronizacji, więc nie znikają po następnym zdaniu. Osobny obszar notatek zapobiega nakładaniu na tekst sceny.

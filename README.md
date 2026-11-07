@@ -26,3 +26,7 @@ Opcja B: w repozytorium GitHub w Settings → Pages wybierz **GitHub Actions** j
 
 ## Praca z Codex
 Codex Cloud wymaga uprzednio przygotowanego środowiska z repozytorium. Otwórz projekt w Codex i użyj pliku `CODEX_ZADANIE.md` jako briefu. Na iPhonie można kontynuować zadania w już opublikowanym środowisku. Ten ZIP nie przenosi rozmowy automatycznie do Codex — to gotowy kod i instrukcje do importu.
+
+## Narzędzia na dużym ekranie
+
+**Języki ⇄** zmienia język mikrofonu i napisów bez wychodzenia ze sceny. **＋ Notatka** pozwala dodać pojęcie i wyjaśnienie: do 3 notatek po 400 znaków, z edycją i ukrywaniem. Tłumaczenie trwa podczas pisania. Notatki są przechowywane lokalnie i synchronizowane między oknami tej samej przeglądarki; nie trafiają do tłumacza ani do SRT. Na telefonie są pod napisami, a na dużym ekranie po prawej. Nowe słowa pojawiają się płynnie; ograniczenie ruchu wyłącza efekt.

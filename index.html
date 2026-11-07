@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090b10">
+<title>Scena Live — francuski → polski</title>
+<style>
+:root{color-scheme:dark;--bg:#090b10;--panel:#12151e;--panel2:#171b26;--stroke:#2a2f3c;--text:#f7f8fb;--muted:#939bac;--accent:#f1bc76;--green:#58d8a0;--red:#ff7883;--radius:18px;--stage-font:90px}
+*{box-sizing:border-box}html,body{min-height:100%;margin:0}body{background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.48;cursor:not-allowed}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}::selection{background:#be9359;color:black}
+.shell{max-width:1500px;margin:0 auto;padding:28px clamp(18px,4vw,56px) 52px}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:34px}.brand{display:flex;align-items:center;gap:14px;font-size:15px;font-weight:800;letter-spacing:.1em}.brand-mark{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;color:#15100a;background:var(--accent);font-size:23px;letter-spacing:-.15em;padding-right:4px}.nav-right{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.eyebrow{text-transform:uppercase;letter-spacing:.16em;color:var(--accent);font-weight:700;font-size:11px}.dot{width:8px;height:8px;display:inline-block;border-radius:50%;background:#778192}.dot.on{background:var(--green);box-shadow:0 0 14px #58d8a066}.dot.pending{background:var(--accent)}.status-pill{font-size:12px;color:#d2d8e3;padding:10px 14px;border:1px solid var(--stroke);border-radius:999px;display:flex;align-items:center;gap:9px}.langpill{border-radius:999px;background:#27231d;border:1px solid #57452c;padding:10px 15px;color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.05em}h1{font-weight:750;line-height:1.1;font-size:clamp(32px,4vw,52px);letter-spacing:-.045em;margin:9px 0 12px}.intro{color:var(--muted);max-width:710px;font-size:15px;line-height:1.65;margin:0 0 27px}.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:22px}.btn{border:1px solid #424957;color:white;background:#1b202b;padding:14px 19px;min-height:46px;border-radius:12px;font-size:14px;font-weight:650;display:inline-flex;justify-content:center;align-items:center;gap:9px;transition:filter .15s,transform .15s}.btn:hover:not(:disabled){filter:brightness(1.18)}.btn:active:not(:disabled){transform:translateY(1px)}.btn-primary{background:var(--accent);color:#18130c;border-color:var(--accent)}.btn-danger{color:#ffb1b9;border-color:#633840;background:#332025}.btn-subtle{background:transparent}.btn-small{padding:9px 13px;font-size:12px;min-height:36px;border-radius:9px}.btn-icon{font-size:18px;line-height:1}.meta{color:var(--muted);font-size:13px;line-height:1.6}.notice{padding:12px 16px;border:1px solid #52452b;border-radius:12px;background:#251f17;color:#f5d5a2;font-size:13px;line-height:1.55;margin:0 0 20px;display:none}.notice.error{border-color:#684047;background:#291a1f;color:#ffb4bd}.notice.visible{display:block}.main-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:18px;margin-bottom:18px}.panel{background:linear-gradient(145deg,#151922,#11141b);border:1px solid var(--stroke);border-radius:var(--radius);padding:24px;min-width:0}.panel-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px}.panel-title h2{font-size:16px;font-weight:700;margin:0;letter-spacing:-.02em}.flag{font-size:18px}.soft-badge{font-size:11px;padding:6px 9px;border:1px solid #3c414c;border-radius:8px;color:#c5cbd5;white-space:nowrap}.speech{font-size:clamp(20px,2.2vw,28px);line-height:1.52;letter-spacing:-.015em;min-height:188px;white-space:pre-wrap;overflow-wrap:anywhere}.speech.placeholder{color:#626b7b}.speech .interim{color:#8c95a5}.polish{font-size:clamp(24px,2.7vw,34px);line-height:1.43;font-weight:650;min-height:188px;white-space:pre-wrap;overflow-wrap:anywhere}.polish.placeholder{color:#647080}.panel-bottom{display:flex;gap:8px;justify-content:space-between;align-items:center;border-top:1px solid var(--stroke);padding-top:15px;margin-top:16px;flex-wrap:wrap}.section-heading{display:flex;justify-content:space-between;gap:16px;align-items:baseline;margin:34px 0 15px}.section-heading h2{font-size:21px;letter-spacing:-.025em;margin:0}.section-heading p{font-size:12px;color:var(--muted);margin:0}.stage-preview{min-width:0;width:100%;background:#050609;border:1px solid #353943;border-radius:17px;position:relative;aspect-ratio:16/7;min-height:205px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:38px clamp(28px,4vw,70px)}.stage-preview .stage-text{font-size:clamp(22px,3.3vw,50px);line-height:1.18}.stage-preview .stage-language{font-size:11px;top:21px;left:28px}.stage-preview .stage-footer{font-size:9px;bottom:17px;left:28px}.stage-preview .stage-placeholder{font-size:clamp(22px,3.3vw,50px)}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:20px}.field{display:flex;flex-direction:column;gap:8px}.field label,.field .lbl{font-size:12px;color:#c8cfdb;font-weight:700}.field input,.field select,.field textarea{border:1px solid #353b48;background:#0d1017;border-radius:10px;color:#f4f6fb;width:100%;padding:13px 13px;outline:none;min-width:0}.field textarea{min-height:92px;resize:vertical;line-height:1.55}.hint{font-size:11px;color:var(--muted);line-height:1.5}.range-row{display:flex;align-items:center;gap:16px}.range-row input{padding:0;accent-color:var(--accent)}.range-row strong{min-width:50px;font-size:13px;text-align:right}.checkrow{display:flex;align-items:center;gap:10px;font-size:13px;color:#cbd1db;margin-top:16px}.checkrow input{accent-color:var(--accent);width:17px;height:17px}.test-controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.lower-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.history{max-height:230px;overflow:auto;display:flex;flex-direction:column;gap:10px}.history-empty{color:var(--muted);font-size:13px}.history-item{border-bottom:1px solid #313744;padding-bottom:11px}.history-item time{font-size:10px;color:var(--accent);letter-spacing:.09em}.history-item .fr{font-size:12px;color:#98a2b2;margin-top:6px}.history-item .pl{font-size:14px;margin-top:4px;font-weight:550;line-height:1.5}.footer{border-top:1px solid #242a35;margin-top:38px;padding-top:18px;font-size:12px;color:#8791a1;line-height:1.7}.link{color:var(--accent)}.mini{font-size:11px;color:var(--muted);line-height:1.7}
+/* Reusable screen styles */
+.stage-language{position:absolute;left:5.5%;top:7%;font-size:clamp(12px,1.2vw,23px);letter-spacing:.22em;font-weight:800;color:var(--accent);opacity:.94}.stage-footer{position:absolute;bottom:7%;left:5.5%;font-size:clamp(11px,1vw,20px);letter-spacing:.24em;color:#9ba2af;font-weight:650}.stage-text{color:#f5f4f1;letter-spacing:-.035em;font-weight:720;text-wrap:balance;overflow-wrap:anywhere;white-space:pre-wrap;max-width:100%;position:relative;z-index:2}.stage-placeholder{font-size:clamp(30px,3vw,66px);font-weight:580;color:#737782;letter-spacing:-.04em}.stage-preview .stage-text{max-width:100%}.scene-position-center{text-align:center;align-items:center}.scene-position-left{text-align:left;align-items:flex-start}.scene-position-bottom{justify-content:flex-end!important}.scene-position-bottom .stage-text{margin-bottom:4%}.stage-preview.scene-position-bottom{padding-bottom:65px}
+body.is-stage{background:#050609;overflow:hidden}body.is-stage .shell{display:none}#stagePage{display:none}body.is-stage #stagePage{display:flex}#stagePage{height:100dvh;width:100vw;background:#050609;position:relative;flex-direction:column;padding:14vh 7vw 13vh;justify-content:center;overflow:hidden}#stagePage::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 46% 60%,#16171b55,transparent 66%);pointer-events:none}.is-stage .stage-text{font-size:var(--stage-font);line-height:1.18;max-width:1400px}.is-stage .stage-placeholder{font-size:clamp(35px,4vw,72px);visibility:hidden}.stage-toolbar{position:absolute;top:16px;right:18px;z-index:3;display:flex;gap:8px;opacity:.07;transition:opacity .2s}.stage-toolbar:hover,.stage-toolbar:focus-within{opacity:1}.stage-toolbar button{font-size:12px;background:#252a36;color:white;padding:12px;border-radius:9px;border:1px solid #414959}.stage-bottom-line{height:2px;width:100%;position:absolute;bottom:0;left:0;background:#292118;opacity:.45}.is-stage .stage-language{top:7%;left:7%;font-size:clamp(14px,1.4vw,25px)}.is-stage .stage-footer{left:7%;bottom:7%}.is-stage #stagePage.scene-position-left{align-items:flex-start}.is-stage #stagePage.scene-position-center{align-items:center;text-align:center}.is-stage #stagePage.scene-position-bottom{justify-content:flex-end;padding-bottom:18vh}.is-stage #stagePage.scene-position-bottom .stage-text{margin-bottom:0}.is-stage #stagePage.hide-label .stage-language,.is-stage #stagePage.hide-label .stage-footer,.stage-preview.hide-label .stage-language,.stage-preview.hide-label .stage-footer{display:none}.stage-page-fullscreen:fullscreen{background:#050609}
+@media(max-width:1000px){.main-grid,.lower-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.stage-preview{aspect-ratio:16/9}.nav{align-items:flex-start;flex-direction:column}.shell{padding-top:20px}}@media(max-width:560px){.panel{padding:18px}.controls>.btn{flex:1 1 100%}.section-heading{flex-direction:column;gap:6px}.stage-preview{min-height:225px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="shell" id="operatorPage">
+ <nav class="nav"><div class="brand"><div class="brand-mark">S.</div><div>SCENA <span style="font-weight:400;color:#8992a2">/ LIVE TRANSLATE</span></div></div><div class="nav-right"><span class="langpill">FRANÇAIS → POLSKI</span><span class="status-pill"><span class="dot" id="micDot"></span><span id="micState">Mikrofon wyłączony</span></span></div></nav>
+ <div class="eyebrow">Tłumaczenie na żywo • panel operatora</div>
+ <h1>Francuski na scenie.<br>Polskie napisy obok.</h1>
+ <p class="intro">Uruchom mikrofon, otwórz widok sceniczny na projektorze i wyświetlaj tłumaczone wypowiedzi na żywo. Bez konta i bez płatnego abonamentu. Przed wydarzeniem wykonaj próbę z prawdziwym mikrofonem.</p>
+ <div class="controls">
+  <button class="btn btn-primary" id="startBtn"><span class="btn-icon">◉</span> Uruchom mikrofon</button>
+  <button class="btn btn-danger" id="stopBtn" disabled>■ Zatrzymaj</button>
+  <button class="btn" id="openStageBtn">↗ Otwórz ekran sceniczny</button>
+  <button class="btn btn-subtle" id="prepareBtn">↓ Przygotuj tłumacz offline</button>
+ </div>
+ <p class="notice" id="notice" role="alert"></p>
+ <div class="main-grid">
+  <section class="panel"><div class="panel-title"><h2>🇫🇷 Rozpoznana wypowiedź</h2><span class="soft-badge" id="recognitionBadge">Oczekiwanie</span></div><div class="speech placeholder" id="sourceText">Tutaj pojawią się słowa prelegenta mówiącego po francusku…</div><div class="panel-bottom"><span class="meta" id="recognitionStatus">Źródło: mikrofon komputera</span><button class="btn btn-small btn-subtle" id="clearSourceBtn">Wyczyść tekst</button></div></section>
+  <section class="panel"><div class="panel-title"><h2>🇵🇱 Tłumaczenie na polski</h2><span class="soft-badge" id="translationBadge">Silnik: automatyczny</span></div><div class="polish placeholder" id="translatedText">Tutaj pojawi się tłumaczenie wyświetlane na scenie…</div><div class="panel-bottom"><span class="meta" id="translationStatus">Gotowe do testu</span><button class="btn btn-small btn-subtle" id="clearStageBtn">Wyczyść ekran</button></div></section>
+ </div>
+ <div class="section-heading"><h2>Podgląd ekranu scenicznego</h2><p>To właśnie zobaczy publiczność na projektorze lub ekranie LED</p></div>
+ <div class="stage-preview scene-position-center" id="previewBox"><div class="stage-language" id="previewLabel">FRANÇAIS → POLSKI</div><div class="stage-text stage-placeholder" id="previewText">Tłumaczenie pojawi się tutaj</div><div class="stage-footer">TŁUMACZENIE NA ŻYWO</div></div>
+ <div class="lower-grid">
+  <section class="panel" style="margin-top:18px"><div class="panel-title"><h2>Ustawienia</h2><span class="soft-badge">Zapisane w przeglądarce</span></div>
+   <div class="form-grid" style="margin-top:0">
+    <div class="field"><label for="engineSelect">Silnik tłumaczenia</label><select id="engineSelect"><option value="auto">Automatyczny (zalecany)</option><option value="local">Chrome AI – na urządzeniu</option><option value="mymemory">MyMemory – internetowy</option></select><div class="hint" id="engineHint">Najpierw sprawdzana jest lokalna AI w Chrome, a jeśli niedostępna — MyMemory.</div></div>
+    <div class="field"><label for="emailInput">E-mail do darmowego limitu (opcjonalnie)</label><input type="email" id="emailInput" placeholder="kontakt@twojadomena.pl" autocomplete="off"><div class="hint">MyMemory: 5 000 znaków/dzień bez adresu; 50 000 z poprawnym e-mailem.</div></div>
+    <div class="field"><label for="positionSelect">Pozycja napisów</label><select id="positionSelect"><option value="center">Środek ekranu</option><option value="left">Wyrównanie do lewej</option><option value="bottom">Dół ekranu</option></select></div>
+    <div class="field"><span class="lbl">Rozmiar napisów</span><div class="range-row"><input id="fontSlider" type="range" min="48" max="146" value="90" step="2"><strong id="fontValue">90 px</strong></div><div class="hint">Na dużym ekranie automatycznie dostosowujemy długie zdania.</div></div>
+   </div>
+   <label class="checkrow"><input type="checkbox" id="labelToggle" checked> Pokazuj mały podpis „FRANÇAIS → POLSKI”</label>
+   <div class="panel-bottom"><span class="mini" id="localSupport">Sprawdzanie lokalnego silnika AI…</span></div>
+  </section>
+  <section class="panel" style="margin-top:18px"><div class="panel-title"><h2>Test i ręczne sterowanie</h2><span class="soft-badge">Tryb awaryjny</span></div>
+   <div class="field"><label for="testFrench">Wpisz zdanie po francusku</label><textarea id="testFrench" placeholder="Bonjour à toutes et à tous, merci d'être avec nous aujourd'hui."></textarea></div>
+   <div class="test-controls"><button class="btn btn-small btn-primary" id="translateTestBtn">Przetłumacz i wyświetl</button><button class="btn btn-small" id="demoBtn">Pokaż przykładowe napisy</button></div>
+   <div class="field" style="margin-top:19px"><label for="manualPolish">Ręcznie wpisz poprawne polskie napisy</label><textarea id="manualPolish" placeholder="Wpisz własny tekst, aby natychmiast wyświetlić go na scenie."></textarea></div>
+   <div class="test-controls"><button class="btn btn-small" id="manualBtn">Wyświetl mój tekst</button><button class="btn btn-small btn-subtle" id="exportBtn">↓ Eksport SRT</button></div>
+  </section>
+ </div>
+ <div class="section-heading"><h2>Historia tłumaczenia</h2><p>Lista zdań z bieżącej sesji</p></div>
+ <div class="panel"><div id="history" class="history"><div class="history-empty">Wypowiedzi pojawią się tutaj po rozpoczęciu tłumaczenia.</div></div></div>
+ <footer class="footer">Mikrofon działa najlepiej w aktualnym <b>Google Chrome na komputerze</b>. Rozpoznawanie mowy w Chrome może wysyłać dźwięk do usługi Google; tłumaczenie lokalne po pobraniu modelu odbywa się na urządzeniu, a tryb MyMemory wysyła tekst do zewnętrznej usługi. Darmowe funkcje mogą mieć limity lub wymagać internetu. Upewnij się, że masz zgodę na przetwarzanie wypowiedzi. <br><span style="color:#c1c8d5">Do projekcji: drugi monitor → „Otwórz ekran sceniczny” → przeciągnij tam okno → „Pełny ekran”.</span></footer>
+</main>
+<div id="stagePage" class="scene-position-center" role="region" aria-label="Napisy na scenie">
+ <div class="stage-language">FRANÇAIS → POLSKI</div><div class="stage-text stage-placeholder" id="stageText"> </div><div class="stage-footer">TŁUMACZENIE NA ŻYWO</div><div class="stage-bottom-line"></div>
+ <div class="stage-toolbar"><button id="fullscreenBtn">⛶ Pełny ekran</button><button id="stageCloseBtn">✕</button></div>
+</div>
+<script>
+(() => {
+ 'use strict';
+ const $ = id => document.getElementById(id);
+ const STAGE_KEY = 'scena-live-frpl-stage-v2';
+ const SETTINGS_KEY = 'scena-live-frpl-settings-v2';
+ const isStage = new URL(location.href).searchParams.get('view') === 'stage';
+ const defaults = { engine:'auto', email:'', position:'center', font:90, label:true };
+ let settings = {...defaults};
+ try { settings = {...defaults,...JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}')}; } catch(_) {}
+ let stageData = {segments:[],visible:true};
+ try { stageData = {...stageData,...JSON.parse(localStorage.getItem(STAGE_KEY)||'{}')}; } catch(_) {}
+ let channel = null;
+ try { channel = new BroadcastChannel('scena-live-frpl-broadcast-v2'); } catch(_) {}
+ let shouldListen = false, listening = false, recognition = null, restartTimeout = null, retryCount = 0;
+ let interimSource = '', lastSource = '', enginePromise = null, localTranslator = null;
+ let queued = [], processing = false, sessionStart = Date.now(), historyEntries = [];
+ let translationGeneration = 0;
+ function cancelPendingTranslations(){ translationGeneration++; queued=[]; }
+ const demoSamples = [
+  {fr:'Bonjour à toutes et à tous. Je suis très heureux de vous accueillir aujourd’hui.',pl:'Dzień dobry Państwu. Bardzo się cieszę, że mogę Was dzisiaj powitać.'},
+  {fr:'Nous allons parler de l’avenir, de la créativité et des nouvelles technologies.',pl:'Porozmawiamy o przyszłości, kreatywności i nowych technologiach.'},
+  {fr:'Merci beaucoup pour votre attention et pour votre présence.',pl:'Bardzo dziękuję za uwagę i za Państwa obecność.'}
+ ];
+ let demoIndex = 0;
+ function persistSettings(){ try { localStorage.setItem(SETTINGS_KEY,JSON.stringify(settings)); } catch(_) {} emit({type:'settings',settings}); renderStage(); }
+ function emit(msg){ try { channel?.postMessage(msg); } catch(_) {} }
+ function saveStage(){ try { localStorage.setItem(STAGE_KEY,JSON.stringify(stageData)); } catch(_) {} emit({type:'stage',data:stageData}); renderStage(); }
+ function clearStage(){ cancelPendingTranslations(); stageData={segments:[],visible:true};saveStage();if(!isStage){$('translatedText').textContent='Tutaj pojawi się tłumaczenie wyświetlane na scenie…';$('translatedText').classList.add('placeholder');} }
+ function adjustFont(text){ const len = Array.from(text||'').length;const base = Number(settings.font)||90;const factor = len>170?.57:len>120?.67:len>82?.78:len>55?.88:1;return Math.max(37,Math.round(base*factor)); }
+ function stageTextValue(){return (stageData.segments||[]).join(' ');}
+ function applyLayout(el){const positions=['center','left','bottom'];for(const p of positions) el.classList.toggle('scene-position-'+p,settings.position===p);el.classList.toggle('hide-label',!settings.label);}
+ function renderStage(){
+  const text=stageTextValue();
+  if(isStage){const page=$('stagePage');applyLayout(page);const out=$('stageText');out.textContent=text||' ';out.classList.toggle('stage-placeholder',!text);page.style.setProperty('--stage-font',adjustFont(text)+'px');}
+  else {const preview=$('previewBox');applyLayout(preview);const p=$('previewText');p.textContent=text||'Tłumaczenie pojawi się tutaj';p.classList.toggle('stage-placeholder',!text);$('fontValue').textContent=settings.font+' px';$('translatedText').textContent=text||'Tutaj pojawi się tłumaczenie wyświetlane na scenie…';$('translatedText').classList.toggle('placeholder',!text);}
+ }
+ function showMessage(message,isError=false){if(isStage)return;const el=$('notice');el.textContent=message;el.classList.add('visible');el.classList.toggle('error',isError);}
+ function clearMessage(){if(isStage)return;$('notice').className='notice';$('notice').textContent='';}
+ function updateMicStatus(text,kind='off') {if(isStage)return;$('micState').textContent=text;$('micDot').className='dot'+(kind==='on'?' on':kind==='pending'?' pending':'');$('recognitionBadge').textContent=text;}
+ function stamp(){return new Date().toLocaleTimeString('pl-PL',{hour:'2-digit',minute:'2-digit',second:'2-digit'});}
+ function setStageTranslation(translated, original='', manual=false) {
+  const value=(translated||'').trim();if(!value)return;
+  stageData={segments:[...(stageData.segments||[]),value].slice(-2),visible:true};saveStage();
+  if(!isStage){$('translationStatus').textContent=(manual?'Wpis ręczny':'Ostatnia aktualizacja')+' • '+stamp();$('translationBadge').textContent=manual?'Operator':'Tłumaczenie aktywne';}
+  historyEntries.push({fr:original,pl:value,manual,at:Date.now(),start:Math.max(0,(Date.now()-sessionStart)/1000)});
+  if(!isStage)renderHistory();
+ }
+ function renderHistory(){const root=$('history');root.replaceChildren();if(!historyEntries.length){const p=document.createElement('div');p.className='history-empty';p.textContent='Wypowiedzi pojawią się tutaj po rozpoczęciu tłumaczenia.';root.append(p);return;}
+  for(const item of historyEntries.slice(-35).reverse()){
+   const el=document.createElement('div');el.className='history-item';
+   const ti=document.createElement('time');ti.textContent=new Date(item.at).toLocaleTimeString('pl-PL');
+   const pl=document.createElement('div');pl.className='pl';pl.textContent=item.pl;
+   el.append(ti,pl);if(item.fr){const fr=document.createElement('div');fr.className='fr';fr.textContent='FR: '+item.fr;el.append(fr);}root.append(el);
+  }
+ }
+ function errorMessage(err){return err?.message||String(err||'Nieznany błąd');}
+ async function initTranslator(){
+  if(localTranslator)return localTranslator;
+  if(enginePromise)return enginePromise;
+  if(typeof window.Translator==='undefined')throw new Error('Lokalny tłumacz Chrome AI jest niedostępny w tej przeglądarce.');
+  if(!isStage){$('translationStatus').textContent='Przygotowanie lokalnego modelu tłumaczenia…';}
+  enginePromise=window.Translator.create({sourceLanguage:'fr',targetLanguage:'pl',monitor(m){m.addEventListener('downloadprogress',e=>{if(!isStage){const x=Math.round((e.loaded??0)*100);$('translationStatus').textContent='Pobieranie modelu językowego: '+x+'%';}});}})
+   .then(t=>{localTranslator=t;if(!isStage){$('localSupport').textContent='✓ Lokalny tłumacz FR → PL gotowy';$('translationStatus').textContent='Lokalny tłumacz gotowy';}return t;})
+   .catch(e=>{enginePromise=null;if(!isStage)$('localSupport').textContent='Lokalny tłumacz niedostępny: '+errorMessage(e);throw e;});
+  return enginePromise;
+ }
+ function splitBytes(s,maxBytes=420){
+  const enc=new TextEncoder();const result=[];let rem=s.trim();
+  while(rem){if(enc.encode(rem).length<=maxBytes){result.push(rem);break;}
+   let n=Math.min(rem.length,maxBytes);while(n>1&&enc.encode(rem.slice(0,n)).length>maxBytes)n--;
+   let head=rem.slice(0,n);const cut=Math.max(head.lastIndexOf('. '),head.lastIndexOf('! '),head.lastIndexOf('? '),head.lastIndexOf(', '),head.lastIndexOf(' '));
+   if(cut>n*.4) n=cut+1;head=rem.slice(0,n).trim();if(!head){head=rem.slice(0,Math.max(1,n));}
+   result.push(head);rem=rem.slice(n).trim();
+  }
+  return result;
+ }
+ async function myMemoryTranslate(text){
+  const pieces=splitBytes(text);const translated=[];
+  for(const piece of pieces){
+   const p=new URLSearchParams({q:piece,langpair:'fr|pl'});if(settings.email?.trim())p.set('de',settings.email.trim());
+   const ctrl=new AbortController();const abort=setTimeout(()=>ctrl.abort(),13000);
+   try{
+    const r=await fetch('https://api.mymemory.translated.net/get?'+p.toString(),{signal:ctrl.signal});
+    if(!r.ok)throw new Error('Serwer MyMemory nie odpowiada (HTTP '+r.status+').');
+    const json=await r.json();
+    if(Number(json.responseStatus)!==200||!json.responseData?.translatedText)throw new Error(json.responseDetails||'Limit MyMemory został osiągnięty lub usługa nie zwróciła tłumaczenia.');
+    const txt=document.createElement('textarea');txt.innerHTML=json.responseData.translatedText;
+    const value=txt.value.trim();
+    if(!value)throw new Error('Usługa zwróciła puste tłumaczenie.');
+    translated.push(value);
+   }catch(e){if(e?.name==='AbortError')throw new Error('Przekroczono czas odpowiedzi MyMemory.');throw e;}
+   finally{clearTimeout(abort);}
+  }
+  if(!isStage)$('translationBadge').textContent='MyMemory • online';
+  return translated.join(' ');
+ }
+ async function translate(text){
+  const choice=settings.engine;
+  if(choice!=='mymemory'){
+   try { const t=await initTranslator();if(!isStage)$('translationBadge').textContent='Chrome AI • lokalnie';return await t.translate(text); }
+   catch(e){if(choice==='local')throw e;if(!isStage){$('translationStatus').textContent='Lokalna AI niedostępna, używam MyMemory…';}}
+  }
+  return myMemoryTranslate(text);
+ }
+ function queueTranslation(fr){const text=fr.trim();if(!text)return;if(queued.length>=25){showMessage('Kolejka tłumaczeń jest zbyt długa. Sprawdź połączenie internetowe lub przełącz silnik.',true);return;}queued.push({text,generation:translationGeneration});processQueue();}
+ async function processQueue(){if(processing)return;processing=true;
+  while(queued.length){const item=queued.shift();try{
+    if(!isStage){$('translationStatus').textContent='Tłumaczenie… • w kolejce: '+queued.length;}
+    const pl=await translate(item.text);if(item.generation===translationGeneration)setStageTranslation(pl,item.text);
+   }catch(e){if(item.generation!==translationGeneration)continue;showMessage('Nie udało się przetłumaczyć: '+errorMessage(e)+' Możesz ręcznie wyświetlić tekst po polsku.',true);if(!isStage)$('translationStatus').textContent='Błąd tłumaczenia';}
+  }
+  processing=false;
+ }
+ function updateSource(){const source=lastSource.trim();const preview=interimSource.trim();const el=$('sourceText');el.replaceChildren();el.classList.toggle('placeholder',!(source||preview));if(!source&&!preview){el.textContent='Tutaj pojawią się słowa prelegenta mówiącego po francusku…';return;}
+  el.append(document.createTextNode(source.slice(-680)));if(preview){const s=document.createElement('span');s.className='interim';s.textContent=(source?' ':'')+preview;el.append(s);}
+ }
+ function createRecognizer(){const Klass=window.SpeechRecognition||window.webkitSpeechRecognition;if(!Klass)return null;
+  const rec=new Klass();rec.lang='fr-FR';rec.continuous=true;rec.interimResults=true;rec.maxAlternatives=1;
+  const finalized=new Set();
+  rec.onstart=()=>{if(recognition!==rec||!shouldListen)return;listening=true;updateMicStatus('Nasłuchiwanie: francuski','on');$('recognitionStatus').textContent='Mikrofon aktywny • fr-FR';};
+  rec.onresult=(event)=>{
+   if(recognition!==rec||!shouldListen)return;
+   let inter='';
+   for(let i=event.resultIndex;i<event.results.length;i++){
+    const result=event.results[i];const t=result[0]?.transcript||'';
+    if(result.isFinal){if(!finalized.has(i)){finalized.add(i);const clean=t.trim();if(clean){retryCount=0;lastSource+=(lastSource?' ':'')+clean;queueTranslation(clean);}}}
+   }
+   for(let i=0;i<event.results.length;i++)if(!event.results[i].isFinal)inter+=event.results[i][0]?.transcript||'';
+   interimSource=inter;updateSource();
+  };
+  rec.onerror=(ev)=>{
+   if(recognition!==rec||!shouldListen)return;
+   const code=ev.error||'unknown';
+   if(code==='no-speech'||code==='aborted')return;
+   const fatal=['not-allowed','service-not-allowed','audio-capture','language-not-supported'].includes(code);
+   showMessage('Problem z rozpoznawaniem mowy: '+code+(fatal?' — sprawdź uprawnienia do mikrofonu i wejście audio.':' — sprawdź internet i mikrofon.'),true);
+   if(fatal||code==='network'){shouldListen=false;$('startBtn').disabled=false;$('stopBtn').disabled=true;updateMicStatus('Błąd mikrofonu','off');}
+  };
+  rec.onend=()=>{if(recognition!==rec)return;recognition=null;listening=false;interimSource='';updateSource();if(shouldListen){updateMicStatus('Wznawianie mikrofonu…','pending');retryCount++;if(retryCount>10){stopMicrophone();showMessage('Rozpoznawanie mowy było wielokrotnie przerywane. Uruchom mikrofon ponownie.',true);return;}
+    restartTimeout=setTimeout(()=>{if(shouldListen)startRecognitionSession();},650);
+   }else updateMicStatus('Mikrofon wyłączony','off');};
+  return rec;
+ }
+ function startRecognitionSession(){if(!shouldListen)return;try{recognition=createRecognizer();if(!recognition)throw new Error('Ta przeglądarka nie obsługuje rozpoznawania mowy. Użyj Chrome na komputerze.');recognition.start();}catch(e){shouldListen=false;$('startBtn').disabled=false;$('stopBtn').disabled=true;showMessage(errorMessage(e),true);updateMicStatus('Mikrofon niedostępny','off');}}
+ function startMicrophone(){if(shouldListen)return;clearMessage();if(!(window.SpeechRecognition||window.webkitSpeechRecognition)){showMessage('Uruchom tę aplikację w aktualnym Chrome na komputerze — ta przeglądarka nie obsługuje SpeechRecognition.',true);return;}
+  shouldListen=true;retryCount=0;$('startBtn').disabled=true;$('stopBtn').disabled=false;
+  // Initialize the browser's language pack directly inside the user's click gesture.
+  if(settings.engine!=='mymemory'&&typeof window.Translator!=='undefined'){initTranslator().catch(()=>{});}
+  startRecognitionSession();
+ }
+ function stopMicrophone(){shouldListen=false;clearTimeout(restartTimeout);const previous=recognition;recognition=null;if(previous){try{previous.abort();}catch(_){}}interimSource='';updateSource();listening=false;$('startBtn').disabled=false;$('stopBtn').disabled=true;updateMicStatus('Mikrofon wyłączony','off');$('recognitionStatus').textContent='Mikrofon zatrzymany';}
+ function openStage(){const u=new URL(location.href);u.searchParams.set('view','stage');const w=window.open(u.toString(),'scena_live_frpl_stage','popup=yes,width=1280,height=720');if(!w)showMessage('Przeglądarka zablokowała nowe okno. Zezwól na wyskakujące okna dla tej witryny.',true);}
+ function clock(s){const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),secs=Math.floor(s%60),ms=Math.floor((s%1)*1000);return String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(secs).padStart(2,'0')+','+String(ms).padStart(3,'0');}
+ function downloadSrt(){if(!historyEntries.length){showMessage('Nie ma jeszcze przetłumaczonych wypowiedzi do eksportu.',true);return;}
+  const lines=historyEntries.map((item,i)=>{const start=item.start;const next=historyEntries[i+1]?.start;const end=next!==undefined?Math.min(next,start+8):start+6;return [i+1,clock(start)+' --> '+clock(end),item.pl,''].join('\n');}).join('\n');
+  const blob=new Blob(['\ufeff',lines],{type:'application/x-subrip;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='napisy-fr-pl-'+new Date().toISOString().slice(0,10)+'.srt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);
+ }
+ function initOperator(){
+  $('engineSelect').value=settings.engine;$('emailInput').value=settings.email;$('positionSelect').value=settings.position;$('fontSlider').value=settings.font;$('labelToggle').checked=settings.label;
+  $('startBtn').onclick=startMicrophone;$('stopBtn').onclick=stopMicrophone;$('openStageBtn').onclick=openStage;
+  $('prepareBtn').onclick=()=>{clearMessage();initTranslator().then(()=>showMessage('Lokalny tłumacz francuski → polski jest gotowy. Możesz rozpocząć konferencję.')).catch(e=>showMessage('Nie można przygotować lokalnego tłumacza: '+errorMessage(e)+' Wybierz „Automatyczny”, aby korzystać z MyMemory.',true));};
+  $('clearStageBtn').onclick=clearStage;$('clearSourceBtn').onclick=()=>{lastSource='';interimSource='';updateSource();};
+  $('engineSelect').onchange=e=>{settings.engine=e.target.value;persistSettings();$('engineHint').textContent=settings.engine==='auto'?'Lokalna AI, a jeśli niedostępna — MyMemory.':settings.engine==='local'?'Tylko tłumaczenie lokalne. Wymaga Chrome i pobrania pakietu FR → PL.':'Tłumaczenie online; limit 5 000 lub 50 000 znaków dziennie.';};
+  $('emailInput').onchange=e=>{settings.email=e.target.value.trim();persistSettings();};
+  $('positionSelect').onchange=e=>{settings.position=e.target.value;persistSettings();};
+  $('fontSlider').oninput=e=>{settings.font=Number(e.target.value);persistSettings();};
+  $('labelToggle').onchange=e=>{settings.label=e.target.checked;persistSettings();};
+  $('translateTestBtn').onclick=()=>{const txt=$('testFrench').value.trim();if(!txt){showMessage('Najpierw wpisz zdanie po francusku.',true);return;}lastSource+=(lastSource?' ':'')+txt;interimSource='';updateSource();clearMessage();if(settings.engine!=='mymemory'&&typeof window.Translator!=='undefined')initTranslator().catch(()=>{});queueTranslation(txt);};
+  $('manualBtn').onclick=()=>{const txt=$('manualPolish').value.trim();if(!txt){showMessage('Najpierw wpisz tekst po polsku.',true);return;}cancelPendingTranslations();clearStage();setStageTranslation(txt,'',true);clearMessage();};
+  $('demoBtn').onclick=()=>{cancelPendingTranslations();const x=demoSamples[demoIndex++%demoSamples.length];lastSource+=(lastSource?' ':'')+x.fr;updateSource();setStageTranslation(x.pl,x.fr,true);$('translationBadge').textContent='DEMO (gotowy tekst)';$('translationStatus').textContent='Przykład demonstracyjny — bez połączenia z mikrofonem';clearMessage();};
+  $('exportBtn').onclick=downloadSrt;
+  if(typeof window.Translator ==='undefined')$('localSupport').textContent='Ta wersja przeglądarki nie ma wbudowanego Translator API. Dostępne jest MyMemory.';
+  else window.Translator.availability({sourceLanguage:'fr',targetLanguage:'pl'}).then(v=>{$('localSupport').textContent='Lokalny model FR → PL: '+({available:'gotowy',downloadable:'do pobrania (kliknij „Przygotuj”)',downloading:'w trakcie pobierania',unavailable:'niedostępny'}[v]||v);}).catch(()=>$('localSupport').textContent='Nie udało się sprawdzić obsługi lokalnego modelu.');
+  renderStage();renderHistory();
+ }
+ function initStage(){document.body.classList.add('is-stage');renderStage();$('fullscreenBtn').onclick=async()=>{try{if(!document.fullscreenElement)await $('stagePage').requestFullscreen();else await document.exitFullscreen();}catch(_){$('fullscreenBtn').textContent='Pełny ekran niedostępny — użyj F11';}};$('stageCloseBtn').onclick=()=>window.close();}
+ if(channel){channel.onmessage=e=>{const msg=e.data;if(msg?.type==='stage'){stageData=msg.data;renderStage();}if(msg?.type==='settings'){settings={...settings,...msg.settings};renderStage();}};}
+ window.addEventListener('storage',e=>{if(e.key===STAGE_KEY){try{stageData=JSON.parse(e.newValue);renderStage();}catch(_){}}if(e.key===SETTINGS_KEY){try{settings={...settings,...JSON.parse(e.newValue)};renderStage();}catch(_){}}});
+ if(isStage)initStage();else initOperator();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+const {chromium}=require('playwright');
+const fs=require('fs'),assert=require('node:assert/strict');
+new Function(fs.readFileSync(require('node:path').join(__dirname,'../index.html'),'utf8').match(/<script>([\s\S]*?)<\/script>/)[1]);
+(async()=>{
+const b=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});
+const c=await b.newContext();let delay=0;
+await c.addInitScript(()=>{window.sessions=[];window.SpeechRecognition=class{constructor(){sessions.push(this)}start(){this.onstart?.()}abort(){setTimeout(()=>this.onend?.(),50)}result(t){const r=[{transcript:t}];r.isFinal=true;this.onresult({resultIndex:0,results:[r]})}}});
+await c.route('https://api.mymemory.translated.net/**',async r=>{await new Promise(res=>setTimeout(res,delay));await r.fulfill({json:{responseStatus:200,responseData:{translatedText:'Dzień dobry, witamy na scenie.'}}})});
+const p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));await p.goto(process.env.SCENA_URL||'http://localhost:8081/');await p.selectOption('#engineSelect','mymemory');
+const popup=p.waitForEvent('popup');await p.click('#openStageBtn');const s=await popup;await s.waitForLoadState();
+await p.fill('#manualPolish','Tekst <b>operatora</b>');await p.click('#manualBtn');await s.waitForFunction(()=>document.querySelector('#stageText').textContent==='Tekst <b>operatora</b>');assert.equal(await s.locator('#stageText b').count(),0);
+await p.selectOption('#positionSelect','bottom');await p.locator('#labelToggle').uncheck();await s.waitForFunction(()=>document.querySelector('#stagePage').classList.contains('hide-label'));
+await s.click('#fullscreenBtn');assert(await s.evaluate(()=>!!document.fullscreenElement));await s.click('#fullscreenBtn');
+await p.click('#demoBtn');assert.match(await p.locator('#translationBadge').textContent(),/DEMO/);
+await p.fill('#testFrench','Bonjour à tous.');await p.click('#translateTestBtn');await s.waitForFunction(()=>document.querySelector('#stageText').textContent.includes('Dzień dobry'));
+await p.click('#startBtn');assert.equal(await p.evaluate(()=>sessions.at(-1).lang),'fr-FR');await p.evaluate(()=>{sessions.at(-1).result('Bonjour.');sessions.at(-1).result('Bonjour.')});await p.waitForTimeout(150);assert.equal(await p.locator('.history-item .fr').filter({hasText:'FR: Bonjour.'}).count(),1);
+await p.click('#stopBtn');await p.click('#startBtn');await p.waitForTimeout(100);assert.match(await p.locator('#micState').textContent(),/Nasłuchiwanie/);
+await p.evaluate(()=>sessions.at(-1).onerror({error:'network'}));assert(await p.locator('#startBtn').isEnabled());await p.click('#startBtn');await p.click('#stopBtn');
+delay=300;await p.click('#translateTestBtn');await p.waitForTimeout(80);await p.fill('#manualPolish','Awaryjny napis');await p.click('#manualBtn');await p.waitForTimeout(450);assert.equal(await s.locator('#stageText').textContent(),'Awaryjny napis');
+await p.click('#translateTestBtn');await p.waitForTimeout(80);await p.click('#clearStageBtn');await p.waitForTimeout(450);assert.equal((await s.locator('#stageText').textContent()).trim(),'');
+const dl=p.waitForEvent('download');await p.click('#exportBtn');await (await dl).saveAs('/tmp/scena-output.srt');assert.match(fs.readFileSync('/tmp/scena-output.srt','utf8'),/-->/);
+await c.unrouteAll({behavior:'wait'});await c.route('https://api.mymemory.translated.net/**',r=>r.fulfill({json:{responseStatus:429,responseDetails:'Limit testowy'}}));await p.click('#translateTestBtn');await p.waitForFunction(()=>document.querySelector('#notice').textContent.includes('Limit testowy'));
+await s.reload();assert.equal((await s.locator('#stageText').textContent()).trim(),'');await p.setViewportSize({width:390,height:844});assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert.deepEqual(errors,[]);
+console.log('PASS: syntax, manual/XSS, DEMO, mocked FR→PL, speech fr-FR/dedup, stop/start, network recovery, stale results, stage sync/persistence/settings, fullscreen, SRT, mobile.');await b.close();
+})().catch(e=>{console.error(e);process.exit(1)});

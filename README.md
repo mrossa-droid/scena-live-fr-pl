@@ -1,4 +1,4 @@
-# SCENA LIVE — tłumaczenie francuski → polski na ekranie sceny
+# SCENA LIVE — napisy i tłumaczenie na ekranie sceny
 
 Statyczna aplikacja bez opłat licencyjnych za frontend. Wykorzystuje wbudowane rozpoznawanie mowy w Chrome i opcjonalne, limitowane usługi tłumaczenia. Nie należy używać bez testu technicznego przed wydarzeniem.
 
@@ -12,10 +12,10 @@ Opcja A: przeciągnij ten folder (lub ZIP) na https://app.netlify.com/drop i otr
 Opcja B: w repozytorium GitHub w Settings → Pages wybierz **GitHub Actions** jako źródło publikacji; workflow `.github/workflows/pages.yml` publikuje zawartość tego repo po zmianach na gałęzi `main`.
 
 ## Na konferencji
-1. Otwórz HTTPS na laptopie w aktualnym Google Chrome.
+1. Otwórz HTTPS na laptopie w aktualnym Google Chrome. Wybierz „Z jakiego języka?” i „Na jaki język?”. Przycisk ⇄ zamienia kierunek; ustawienia są zapamiętywane.
 2. Podepnij wejście audio z mikrofonu prelegenta do laptopa (wybierz właściwe wejście w ustawieniach systemu).
 3. Kliknij `Otwórz ekran sceniczny`, przeciągnij okno na wyświetlacz projektora, uruchom pełny ekran.
-4. W panelu przetestuj przykład lub ręczny wpis, sprawdź widoczność na scenie.
+4. Przetestuj tekst źródłowy lub ręczny wpis. Gotowe DEMO dotyczy wyłącznie francuskiego → polskiego. Na telefonie przycisk „Start + duże napisy” utrzymuje mikrofon i napisy w tej samej karcie.
 5. Wybierz metodę tłumaczenia i rozpocznij mikrofon. Zrób test z żywą mową FR przed wejściem publiczności.
 
 ## Ważne ograniczenia

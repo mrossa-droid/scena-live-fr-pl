@@ -26,3 +26,15 @@ Dodano „Start + duże napisy”: mikrofon i scena w tej samej karcie, powrót 
 Napisy częściowe uruchamiają tłumaczenie przed wynikiem końcowym rozpoznawania (pierwszy fragment po około 450 ms, kolejne żądania częściowe najwyżej co około 1,6 s, plus czas usługi). Nowszy fragment zastępuje poprzedni, wynik końcowy poprawia napis, a identyczny tekst korzysta z pamięci odpowiedzi w bieżącej karcie. Do historii/SRT trafiają tylko wyniki końcowe. Automatyczny wybór silnika nie czeka na pobieranie niegotowego modelu Chrome. Tłumaczenia częściowe zwiększają zużycie limitu MyMemory.
 
 Test live-captions.cjs: Chromium w rozmiarze telefonu z emulacją dotyku i wyłączonym Fullscreen API; aktywny mikrofon na scenie, częściowy napis przed wynikiem finalnym, brak podwójnego żądania dla identycznego finału, korekta spóźnionego napisu, powrót do panelu, stop/wznów oraz dopasowanie tekstu do ekranu. Rozpoznawanie i usługa w tym teście są symulowane. Fizyczny iPhone i prawdziwy mikrofon nadal wymagają próby użytkownika.
+
+## Wybór języków
+
+Dodano 26 języków źródłowych i docelowych, zamianę kierunku, trwałe ustawienia i synchronizację pary języków ze sceną. Język SpeechRecognition, parametry MyMemory i modele Chrome Translator korzystają z wybranej pary. Zmiana pary anuluje stare wyniki i wznawia mikrofon w nowym języku. Pamięć tłumaczeń i modeli rozróżnia pary. Ten sam język po obu stronach włącza napisy bez żądania tłumaczenia. DEMO pozostaje oznaczonym gotowym przykładem FR → PL i jest wyłączone dla innych par. Tekst wynikowy ma właściwy atrybut lang i automatyczny kierunek dla pisma arabskiego/hebrajskiego.
+
+Test languages.cjs: wybrany język mikrofonu, żądania PL → EN, zamiana kierunku w trakcie nasłuchiwania, synchronizacja i zapis pary, izolacja starej sesji i opóźnionego wyniku, RTL, tryb jednego języka bez API, układ telefonu oraz poprawne pary lokalnych modeli mimo spóźnionego pobrania poprzedniego modelu. Rozpoznawanie i tłumaczenie w tych testach są symulowane. Dostępność rzeczywistego rozpoznawania, lokalnego modelu i pary tłumaczenia zależy od przeglądarki/usługi.
+
+## Styl szkła i animacja napisów
+
+Dodano grafitowe tło z delikatnym rastrem, chłodne szklane panele i świetlistą kulę CSS. Ruch kuli odpowiada stanowi aplikacji (gotowość, nasłuchiwanie, tłumaczenie, błąd), nie jest pomiarem głośności mikrofonu. Nowy tekst wyłania się z lekkiego rozmycia i przesunięcia przez 260–430 ms; treść jest dostępna od razu. Ponowne renderowanie identycznego napisu nie uruchamia animacji. Preferencja ograniczonego ruchu wyłącza animację kuli i napisów. Zachowano textContent, obsługę RTL i synchronizację.
+
+Powtórzono testy browser.cjs, storage.cjs, live-captions.cjs i languages.cjs: PASS. Obejrzano zrzuty panelu na telefonie i ekranu scenicznego. Sprawdzono w przeglądarce brak animacji po włączeniu prefers-reduced-motion: reduce.
